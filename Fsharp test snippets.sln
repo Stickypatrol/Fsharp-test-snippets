@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fsharp test snippets", "Fsharp test snippets\Fsharp test snippets.fsproj", "{575234E3-5802-4E4A-89BF-3D025E296898}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Monad closure thingy", "Monad closure thingy\Monad closure thingy.fsproj", "{4AA45C93-8FAE-4829-AFBE-F9EC55812BF5}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Coroutine test", "Coroutine test\Coroutine test.fsproj", "{0EBDA8BA-12F0-42B5-AB2E-11130DD25193}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{575234E3-5802-4E4A-89BF-3D025E296898}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{575234E3-5802-4E4A-89BF-3D025E296898}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{575234E3-5802-4E4A-89BF-3D025E296898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AA45C93-8FAE-4829-AFBE-F9EC55812BF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AA45C93-8FAE-4829-AFBE-F9EC55812BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AA45C93-8FAE-4829-AFBE-F9EC55812BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AA45C93-8FAE-4829-AFBE-F9EC55812BF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EBDA8BA-12F0-42B5-AB2E-11130DD25193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EBDA8BA-12F0-42B5-AB2E-11130DD25193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EBDA8BA-12F0-42B5-AB2E-11130DD25193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EBDA8BA-12F0-42B5-AB2E-11130DD25193}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
