@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>0ebda8ba-12f0-42b5-ab2e-11130dd25193</ProjectGuid>
+    <ProjectGuid>0d790186-c546-43d8-b62c-9a6678de4adb</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Coroutine_test</RootNamespace>
-    <AssemblyName>Coroutine_test</AssemblyName>
+    <RootNamespace>simple_name_checker_with_coroutines</RootNamespace>
+    <AssemblyName>simple_name_checker_with_coroutines</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>Coroutine test</Name>
+    <Name>simple name checker with coroutines</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\Coroutine_test.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\simple_name_checker_with_coroutines.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\Coroutine_test.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\simple_name_checker_with_coroutines.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
@@ -48,9 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="old.fs" />
-    <Compile Include="lasttry.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="MainProgram.fs" />
     <None Include="App.config" />
   </ItemGroup>
   <PropertyGroup>

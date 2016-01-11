@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>0ebda8ba-12f0-42b5-ab2e-11130dd25193</ProjectGuid>
+    <ProjectGuid>2031a7a1-58ac-4f78-bfbb-cdf14d59c5c1</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Coroutine_test</RootNamespace>
-    <AssemblyName>Coroutine_test</AssemblyName>
+    <RootNamespace>Dijkstra_implementation</RootNamespace>
+    <AssemblyName>Dijkstra_implementation</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>Coroutine test</Name>
+    <Name>Dijkstra implementation</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\Coroutine_test.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Dijkstra_implementation.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\Coroutine_test.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Dijkstra_implementation.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
@@ -48,8 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="old.fs" />
-    <Compile Include="lasttry.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
   </ItemGroup>

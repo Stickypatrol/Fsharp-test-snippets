@@ -17,9 +17,9 @@ type GenericMonad<'a, 'b> =
     ret : 'a -> Wrapper<'a>
     bind : (Wrapper<'a>* ('a -> Wrapper<'b>)) -> Wrapper<'b>
   }with
-  static member CreateFromMonad (wrapper : MonadType<'a>) =
+(*  static member CreateFromMonad (wrapper : MonadType<'a>) =
     match wrapper with
     | Maybe maybe ->{
                       ret = fun value -> value |> Mtype
                       bind = fun (p, k) -> Maybe.bind p k
-                    }//DOESNT WORK, STOP TRYING
+                    }//DOESNT WORK, STOP TRYING*)
