@@ -1,5 +1,7 @@
 ﻿module CoroutineMonad
 
+open Math
+
 type Coroutine<'w, 's, 'a> = 'w -> 's -> CoroutineStep<'w, 's, 'a>
 and CoroutineStep<'w, 's, 'a> =
   | Done of 'a*'s
@@ -58,15 +60,3 @@ type Entity<'w, 'fs, 'dc> =
     Update            : Coroutine<'w, 'fs, Unit>
     Draw              : Coroutine<'w* 'fs, 'dc, Unit>
   }
-
-type Vector2 = {X : int; Y : int}
-  with static member (+) (a, b) =
-        {X = a.X + b.X; Y = a.Y + b.Y}
-
-type ActorFields =
-  {
-    Name      : char
-    Position  : Vector2
-    Velocity  : Vector2
-  }
-

@@ -56,7 +56,9 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Drawing.fs" />
+    <Compile Include="Math.fs" />
     <Compile Include="CoroutineMonad.fs" />
+    <Compile Include="Actors.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
