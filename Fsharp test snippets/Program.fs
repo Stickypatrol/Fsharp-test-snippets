@@ -1,14 +1,8 @@
-﻿type Direction =
-  | X
-  | Y
-
-
-type Car =
+﻿type Car =
   {
     DistFromHome : int
     UpdateCar : Car -> Car
     IsCarArrived : Car -> bool
-    getInfo : Car -> Direction
   }
 
 type Boat =
@@ -32,26 +26,14 @@ let giveBoat() = {
                                                       boat.MilesFromBermudaTriangle = 10)
                       }
 
-  
 type GenericEntity =
   | Car of Car
   | Boat of Boat
-
-let rec collide (thing:GenericEntity) (things:List<GenericEntity>) : Option<Direction> =
-  let collides thinga thingb =
-    Some(X)
-  match things with
-  | h::t -> if collides h thing = None then
-              collide thing t
-            else
-              collides h thing
-  | [] -> None
 
 type Entity =
   {
     Update : Unit -> Entity
     IsArrived : Unit -> bool
-    GetInto : List<GenericEntity> -> Direction
   } with
     static member entityFromEntity (thing : GenericEntity) =
       match thing with
@@ -64,13 +46,11 @@ type Entity =
                       Update = fun () -> boat |> boat.UpdateBoat |> Boat |> Entity.entityFromEntity
                       IsArrived = fun () -> boat |> boat.IsBoatArrived
                     }
-    static member getinfo (thing : GenericEntity) =
-      (*match thing with the types of entity then call the getinfo method of the object you want*)
-      
+
 let entityList = [(Entity.entityFromEntity (Car(giveCar())));(Entity.entityFromEntity (Car(giveCar()))); (Entity.entityFromEntity (Boat(giveBoat())))]
 
 let rec gameLoop (gs : List<Entity>) =
-  let gs' = [for (ent : Entity) in gs do if not (collide ent. gs) then yield ent.Update()] in
+  let gs' = [for (ent : Entity) in gs do if not (ent.IsArrived()) then yield ent.Update()] in
   System.Threading.Thread.Sleep(1000)
   gameLoop gs'
 

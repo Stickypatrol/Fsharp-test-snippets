@@ -13,6 +13,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Dijkstra implementation", "
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "simple name checker with coroutines", "simple name checker with coroutines\simple name checker with coroutines.fsproj", "{0D790186-C546-43D8-B62C-9A6678DE4ADB}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Coroutine with world test", "Coroutine with world test\Coroutine with world test.fsproj", "{A4B92125-7174-4E8C-91BD-B9F1453ABCA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0D790186-C546-43D8-B62C-9A6678DE4ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D790186-C546-43D8-B62C-9A6678DE4ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D790186-C546-43D8-B62C-9A6678DE4ADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4B92125-7174-4E8C-91BD-B9F1453ABCA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4B92125-7174-4E8C-91BD-B9F1453ABCA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4B92125-7174-4E8C-91BD-B9F1453ABCA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4B92125-7174-4E8C-91BD-B9F1453ABCA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
