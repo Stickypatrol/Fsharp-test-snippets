@@ -20,13 +20,13 @@ let cs = CoroutineBuilder()
 let printX a = fun s -> printfn "%A" a
                         Done((),s)
 
+let yield_ = fun s -> Yield((fun s -> Done((),s)),s)
+
 let rec repeat s =
   cs{
     do! s
     return! repeat s
   }
-
-let yield_ = fun s -> Yield((fun s -> Done((),s)),s)
 
 let wait interval =
   let time = fun s -> Done(System.DateTime.Now, s)
@@ -48,7 +48,7 @@ let wait interval =
 
 let co_step =
   function
-  | Done(a, s) -> (fun s -> (cs{return a}) s)
+  | Done(a, s) -> cs{return a}
   | Yield(p', s) -> p'
 
 

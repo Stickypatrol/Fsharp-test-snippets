@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fsharp test snippets", "Fsharp test snippets\Fsharp test snippets.fsproj", "{575234E3-5802-4E4A-89BF-3D025E296898}"
 EndProject
@@ -14,6 +14,16 @@ EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "simple name checker with coroutines", "simple name checker with coroutines\simple name checker with coroutines.fsproj", "{0D790186-C546-43D8-B62C-9A6678DE4ADB}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Coroutine with world test", "Coroutine with world test\Coroutine with world test.fsproj", "{A4B92125-7174-4E8C-91BD-B9F1453ABCA2}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CoroutineListMonad", "CoroutineSplitStateMonadImplementation\CoroutineListMonad.fsproj", "{9C065492-E790-42CF-96F4-30FCAFE8569C}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Discriminated Union test", "Duscriminated Union test\Discriminated Union test.fsproj", "{A9D3312F-00AD-473A-8E28-015ADCF5D6FA}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MonadTransformer", "CompoundMonad\MonadTransformer.fsproj", "{451571E1-3735-43C7-BA0E-597E1FF1CAAA}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MaybeListMonad", "MaybeListMonad\MaybeListMonad.fsproj", "{149E50C7-6852-45CD-B24B-AA87FF6C430D}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TimeMachine", "TimeMachine\TimeMachine.fsproj", "{310B52A9-9BA5-4146-8911-F72EDD3D449A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +55,26 @@ Global
 		{A4B92125-7174-4E8C-91BD-B9F1453ABCA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4B92125-7174-4E8C-91BD-B9F1453ABCA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4B92125-7174-4E8C-91BD-B9F1453ABCA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C065492-E790-42CF-96F4-30FCAFE8569C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C065492-E790-42CF-96F4-30FCAFE8569C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C065492-E790-42CF-96F4-30FCAFE8569C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C065492-E790-42CF-96F4-30FCAFE8569C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9D3312F-00AD-473A-8E28-015ADCF5D6FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D3312F-00AD-473A-8E28-015ADCF5D6FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D3312F-00AD-473A-8E28-015ADCF5D6FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D3312F-00AD-473A-8E28-015ADCF5D6FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{451571E1-3735-43C7-BA0E-597E1FF1CAAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{451571E1-3735-43C7-BA0E-597E1FF1CAAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{451571E1-3735-43C7-BA0E-597E1FF1CAAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{451571E1-3735-43C7-BA0E-597E1FF1CAAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{149E50C7-6852-45CD-B24B-AA87FF6C430D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{149E50C7-6852-45CD-B24B-AA87FF6C430D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{149E50C7-6852-45CD-B24B-AA87FF6C430D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{149E50C7-6852-45CD-B24B-AA87FF6C430D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{310B52A9-9BA5-4146-8911-F72EDD3D449A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{310B52A9-9BA5-4146-8911-F72EDD3D449A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{310B52A9-9BA5-4146-8911-F72EDD3D449A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{310B52A9-9BA5-4146-8911-F72EDD3D449A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

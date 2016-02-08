@@ -53,10 +53,3 @@ let co_step =
   function
   | Done(a, s) -> cs{return a}
   | Yield(p', s) -> p'
-
-type Entity<'w, 'fs, 'dc> =
-  {
-    Fields            : 'fs
-    Update            : Coroutine<'w, 'fs, Unit>
-    Draw              : Coroutine<'w* 'fs, 'dc, Unit>
-  }
