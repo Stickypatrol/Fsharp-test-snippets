@@ -11,18 +11,7 @@ let operatefunc : Coroutine<Unit, int> =
     return ()
   } |> repeat
 
-let rec mainloop c rs =
-  let c', rs' = match Console.ReadLine() with
-                | x when x = "f" -> match Console.ReadLine() with
-                                    | x when Int32.Parse(x) > 0 -> ForwardFor(c, rs) (Int32.Parse(x))
-                                    | _ -> c, rs
-                | x when x = "b" -> match Console.ReadLine() with
-                                    | x when Int32.Parse(x) > 0 -> c, BackwardFor rs (Int32.Parse(x))
-                                    | _ -> c, BackwardFor rs 0
-                | _ -> StepForward (c, rs)
-  printf "%A" rs'.CurState
-  mainloop c' rs'
-
-do mainloop operatefunc { CurState      = state
-                          StartState    = state
-                          PastSteps     = [yield_]}
+let x = RewindOperator operatefunc {CurState    = state
+                                    StartState  = state
+                                    PastSteps   = [yield_]}
+printfn "%A" x
