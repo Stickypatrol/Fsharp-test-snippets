@@ -20,7 +20,7 @@ let rec mainloop c rs =
                                     | x when Int32.Parse(x) > 0 -> c, BackwardFor rs (Int32.Parse(x))
                                     | _ -> c, BackwardFor rs 0
                 | _ -> StepForward (c, rs)
-  printf "%A\n" rs'.CurState
+  printf "%A" rs'.CurState
   mainloop c' rs'
 
 do mainloop operatefunc { CurState      = state

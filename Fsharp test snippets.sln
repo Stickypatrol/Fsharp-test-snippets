@@ -23,7 +23,7 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MonadTransformer", "Compoun
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MaybeListMonad", "MaybeListMonad\MaybeListMonad.fsproj", "{149E50C7-6852-45CD-B24B-AA87FF6C430D}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TimeMachine", "TimeMachine\TimeMachine.fsproj", "{310B52A9-9BA5-4146-8911-F72EDD3D449A}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RewindFunctionApplication", "TimeMachine\RewindFunctionApplication.fsproj", "{310B52A9-9BA5-4146-8911-F72EDD3D449A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

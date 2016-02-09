@@ -82,10 +82,6 @@ let rec Rerun (c:List<Coroutine<Unit, 's>>, rs:RewindState<Unit, 's>) =
                               Rerun (t, rs')
   | h::t -> StepForward (h, rs)
   | [] -> yield_, rs
-
-let StepBackward rs =
-  snd(Rerun ((Rewind rs.PastSteps 1), {rs with CurState = rs.StartState
-                                                          PastSteps = [co{return ()}]}))
   
 let MultiStepBackward rs x =
   snd(Rerun((Rewind rs.PastSteps x), {rs with CurState =  rs.StartState
