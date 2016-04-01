@@ -14,10 +14,10 @@ type Maybe<'a> =
   | Some of 'a
   | None
 
-type MaybeMonad() =
+(*type MaybeMonad() =
   member this.Return(x) = Some(x)
   member this.Bind(p:Maybe<'a>,k:'a -> Maybe<'b>) : Maybe<'b> =
     match p with
     | Some(x) -> ListMonad().Bind(x, (fun pres -> k pres))
     | None -> None
-let maybe = MaybeMonad()
+let maybe = MaybeMonad()*)

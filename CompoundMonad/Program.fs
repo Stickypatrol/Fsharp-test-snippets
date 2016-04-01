@@ -21,10 +21,10 @@ type MaybeBuilder() =
 let maybe = MaybeBuilder()
 
 let coroutineret x = fun s -> mayberet(x, s)
-
+(*
 let coroutinebind (p:Coroutine<'a, 's>) (k:'a -> Coroutine<'b, 's>) : Coroutine<'b, 's> =
   fun s ->
     match p s with
     | Done(res) -> maybe{ let! a, s' = res
                           return! k a s'}
-    | Yield(p', s') -> 
+    | Yield(p', s') -> *)
