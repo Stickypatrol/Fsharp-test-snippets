@@ -1,57 +1,90 @@
-﻿type Car =
-  {
-    DistFromHome : int
-    UpdateCar : Car -> Car
-    IsCarArrived : Car -> bool
+﻿type Coroutine<'a, 's> = 's -> CoroutineResult<'a, 's>
+and CoroutineResult<'a, 's> =
+  | Done of 'a*'s
+  | NotDone of Coroutine<'a, 's>*'s
+
+let ret x = fun s -> Done(x, s)
+
+let rec bind p k =
+  fun s ->
+    match p s with
+    | Done(a, s') -> k a s'
+    | NotDone(c', s') -> NotDone((bind c' k), s')
+
+type MonadBuilder() =
+  member this.Return(x) = ret x
+  member this.ReturnFrom(c) = c
+  member this.Bind(p,k) = bind p k
+let cor = MonadBuilder()
+
+let print_ x =
+  fun s ->
+    printfn "%A" x
+    Done((), s)
+
+let rec repeat_ c =
+  cor{
+    do! c
+    return! repeat_ c
   }
 
-type Boat =
-  {
-    MilesFromBermudaTriangle : int
-    UpdateBoat : Boat -> Boat
-    IsBoatArrived : Boat -> bool
+let yield_ = fun s -> NotDone((fun s -> Done((), s)), s)
+
+let wait_ interval =
+  let getTime : 's -> CoroutineResult<System.DateTime, 's> = fun s -> Done(System.DateTime.Now,s)
+  cor{
+    let! starttime = getTime
+    let rec wait() : 's -> CoroutineResult<Unit, 's> =
+      cor{
+        let! currenttime = getTime
+        let passedtime = (currenttime - starttime).TotalSeconds
+        if passedtime > interval then
+          return ()
+        else
+          do! yield_
+          return! wait()
+      }
+    do! wait()
+    return ()
   }
-let giveCar() = {
-                      DistFromHome = System.Random().Next(5, 10);
-                      UpdateCar = (fun car -> printfn "distance from home is %i" (car.DistFromHome - 1)
-                                              {car with DistFromHome = car.DistFromHome - 1});
-                      IsCarArrived = (fun car ->  if (car.DistFromHome = 0) then printfn "we have arrived at home safely!"
-                                                  car.DistFromHome = 0)
-                    }
-let giveBoat() = {
-                        MilesFromBermudaTriangle = System.Random().Next(0, 3);
-                        UpdateBoat = (fun (boat : Boat) ->  printfn "nautical miles from bermuda triangle is %i" (boat.MilesFromBermudaTriangle + 1)
-                                                            {boat with MilesFromBermudaTriangle = boat.MilesFromBermudaTriangle + 1});
-                        IsBoatArrived = (fun boat ->  if (boat.MilesFromBermudaTriangle = 10) then printfn "Oh no were being attacked by a ...!"
-                                                      boat.MilesFromBermudaTriangle = 10)
-                      }
 
-type GenericEntity =
-  | Car of Car
-  | Boat of Boat
+let rec (||.) p k =
+  fun s ->
+    match p s, k s with
+    | Done(_, s'), Done(_, _) -> Done((), s')
+    | NotDone(ca', sa'), NotDone(cb', sb') -> NotDone(((||.) ca' cb'), sa')
+    | NotDone(ca', sa'), Done(_, sb') -> NotDone(((||.) ca' (fun s -> Done((), s))), sa')
+    | Done(_, s'), NotDone(cb', sb') -> Done((), s')
 
-type Entity =
-  {
-    Update : Unit -> Entity
-    IsArrived : Unit -> bool
-  } with
-    static member entityFromEntity (thing : GenericEntity) =
-      match thing with
-      | Car car ->  {
-                      Update = fun () -> car |> car.UpdateCar |> Car |> Entity.entityFromEntity
-                      IsArrived = fun () -> car |> car.IsCarArrived
+let functionA () =
+  cor{
+    do! print_ "starting lesson and important stuff"
+    do! wait_ 3.0
+    do! print_ "stopping lesson to listen to unimportant yelling by people who dont do shit in this classroom"
+    do! wait_ 3.0
+    do! print_ "finished lesson"
+    return ()
+  }
 
-                    }
-      | Boat boat -> {
-                      Update = fun () -> boat |> boat.UpdateBoat |> Boat |> Entity.entityFromEntity
-                      IsArrived = fun () -> boat |> boat.IsBoatArrived
-                    }
+let functionB () =
+  cor{
+    do! print_ "BLABLABLA"
+    do! wait_ 0.1
+  } |> repeat_
 
-let entityList = [(Entity.entityFromEntity (Car(giveCar())));(Entity.entityFromEntity (Car(giveCar()))); (Entity.entityFromEntity (Boat(giveBoat())))]
+let completeFunction() =
+  cor{
+    do! (functionA()) ||. (functionB())
+    return ()
+  }
 
-let rec gameLoop (gs : List<Entity>) =
-  let gs' = [for (ent : Entity) in gs do if not (ent.IsArrived()) then yield ent.Update()] in
-  System.Threading.Thread.Sleep(1000)
-  gameLoop gs'
 
-do gameLoop entityList
+let rec costep coroutine state =
+  match coroutine state with
+  | Done(_, newState) ->  printfn "WE ARE ALL DONE WITH THESE FUNCTIONS!!!!!!"
+                          (fun s -> Done((), s)), newState
+  | NotDone(c', s') -> costep c' s'
+
+
+
+let _, finalstate = costep (completeFunction()) ()
